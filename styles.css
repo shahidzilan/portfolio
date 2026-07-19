@@ -113,49 +113,47 @@ input, textarea { font-family: inherit; }
   pointer-events: none;
 }
 
-.loader-inner {
+.particle-loader {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 
-.loader-glass {
+.particle-loader span {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: #38bdf8;
   border-radius: 50%;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  animation: loaderPulse 1.5s ease-in-out infinite;
+  animation: moveParticle1 1.5s ease-in-out infinite;
 }
 
-.loader-text {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  color: var(--text-primary);
-  letter-spacing: -0.5px;
+.particle-loader span:nth-child(1) { animation-name: moveParticle1; }
+.particle-loader span:nth-child(2) { animation-name: moveParticle2; animation-delay: 0.1s; }
+.particle-loader span:nth-child(3) { animation-name: moveParticle3; animation-delay: 0.2s; }
+.particle-loader span:nth-child(4) { animation-name: moveParticle4; animation-delay: 0.3s; }
+
+@keyframes moveParticle1 {
+  0%, 100% { transform: translate(0, 0); opacity: 1; }
+  50% { transform: translate(-24px, -24px); opacity: 0.2; }
 }
 
-.loader-image {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-  position: absolute;
-  inset: 0;
-  margin: auto;
+@keyframes moveParticle2 {
+  0%, 100% { transform: translate(0, 0); opacity: 1; }
+  50% { transform: translate(24px, -24px); opacity: 0.2; }
 }
 
-@keyframes loaderPulse {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.1); opacity: 1; }
+@keyframes moveParticle3 {
+  0%, 100% { transform: translate(0, 0); opacity: 1; }
+  50% { transform: translate(-24px, 24px); opacity: 0.2; }
+}
+
+@keyframes moveParticle4 {
+  0%, 100% { transform: translate(0, 0); opacity: 1; }
+  50% { transform: translate(24px, 24px); opacity: 0.2; }
 }
 
 /* ========================================
