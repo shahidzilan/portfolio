@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shahid Zilan — Portfolio</title>
+  <meta name="description" content="Shahid Zilan — Computer Science & Engineering student, Python Developer, AI Enthusiast from Bangladesh.">
+  <meta name="keywords" content="Shahid Zilan, Portfolio, Python Developer, AI, Bangladesh, CSE Student">
+  <meta name="author" content="Shahid Zilan">
+  <meta property="og:title" content="Shahid Zilan — Portfolio">
+  <meta property="og:description" content="Computer Science & Engineering student passionate about Python, AI, and modern software development.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="perspectiveGrid" class="perspective-grid">
+    <div class="perspective-grid-inner" id="perspectiveGridInner"></div>
+    <div class="perspective-grid-overlay" id="perspectiveGridOverlay"></div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-glass"></div>
+      <img src="photo.jpeg" alt="Shahid Zilan" class="loader-image">
+    </div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="photo.jpeg" alt="Shahid Zilan" class="nav-logo-image">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-links">
+        <li><a href="#hero" class="mobile-link">Home</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#services" class="mobile-link">Services</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#education" class="mobile-link">Education</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <canvas id="ribbonCanvas" class="ribbon-canvas"></canvas>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge glass-subtle fade-up">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-title fade-up" style="transition-delay:0.1s">
+          Hi, I'm<br><span class="hero-name">Shahid Zilan.</span>
+        </h1>
+        <div class="hero-typing fade-up" style="transition-delay:0.2s">
+          <span class="typing-prefix">&gt;</span>
+          <span class="typing-text" id="typingText"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+        <p class="hero-desc fade-up" style="transition-delay:0.3s">
+          I'm a Computer Science & Engineering student from Bangladesh passionate about Python, Artificial Intelligence, Cybersecurity, and modern software development. I enjoy building projects, solving problems, and continuously learning new technologies.
+        </p>
+        <div class="hero-actions fade-up" style="transition-delay:0.4s">
+          <a href="#projects" class="btn btn-primary magnetic">
+            <span>View Projects</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary magnetic">
+            <span>Contact Me</span>
+          </a>
+        </div>
+        <div class="hero-socials fade-up" style="transition-delay:0.5s">
+          <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="social-link magnetic" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/shahidzilan" target="_blank" rel="noopener" class="social-link magnetic" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://instagram.com/shahidzilan" target="_blank" rel="noopener" class="social-link magnetic" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="mailto:shahidzilan7@gmail.com" class="social-link magnetic" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-right fade-up" style="transition-delay:0.3s">
+        <div class="hero-image-wrapper">
+          <div class="hero-image-frame">
+            <img src="photo.jpeg" alt="Shahid Zilan" class="hero-image">
+          </div>
+          <div class="hero-image-dots"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">About Me</span>
+        <h2 class="section-title">A bit about <span class="text-accent">myself</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-content fade-up">
+          <p class="about-text">
+            I'm Shahid Zilan, a dedicated Computer Science & Engineering student with an unwavering passion for technology and software development. My journey into programming started with curiosity and quickly evolved into a deep love for building things that matter.
+          </p>
+          <p class="about-text">
+            Python was my first real programming language, and it opened the door to an incredible world of possibilities — from automating repetitive tasks to exploring the foundations of Artificial Intelligence. Every line of code I write brings me closer to understanding how technology can solve real-world problems.
+          </p>
+          <p class="about-text">
+            I believe in continuous learning. Whether it's mastering data structures, exploring machine learning algorithms, or building web applications, I'm always pushing myself to grow. My goal is to become a well-rounded software engineer who can bridge the gap between innovative ideas and practical solutions.
+          </p>
+          <p class="about-text">
+            Beyond code, I enjoy problem-solving and creative thinking. I'm fascinated by how AI is reshaping industries and want to be at the forefront of that transformation. As digital threats grow more sophisticated, I've also developed a strong interest in cybersecurity — exploring network security, cryptography, and ethical hacking to understand how to build systems that are not just intelligent but also secure.
+          </p>
+        </div>
+        <div class="about-stats fade-up" style="transition-delay:0.2s">
+          <div class="stat-card glass-card">
+            <div class="stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+            </div>
+            <div class="stat-number" data-count="12">0</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="stat-number" data-count="12">0</div>
+            <div class="stat-label">Technologies</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="stat-number" data-count="2">0</div>
+            <div class="stat-label">Years Learning</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="stat-number" data-count="1">0</div>
+            <div class="stat-label">Future Goals</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Skills</span>
+        <h2 class="section-title">My <span class="text-accent">tech stack</span></h2>
+      </div>
+      <div class="skills-grid">
+        <!-- Programming Languages -->
+        <div class="skill-category fade-up">
+          <h3 class="skill-category-title">Programming Languages</h3>
+          <div class="skill-items">
+            <div class="skill-item glass-card" data-level="85">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Python</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:85%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="35">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">JavaScript <span class="skill-badge">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:35%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="skill-category fade-up" style="transition-delay:0.1s">
+          <h3 class="skill-category-title">Web Development</h3>
+          <div class="skill-items">
+            <div class="skill-item glass-card" data-level="60">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">HTML</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:60%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="50">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">CSS</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:50%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="skill-category fade-up" style="transition-delay:0.2s">
+          <h3 class="skill-category-title">Databases</h3>
+          <div class="skill-items">
+            <div class="skill-item glass-card" data-level="30">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">SQL <span class="skill-badge">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:30%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category fade-up" style="transition-delay:0.3s">
+          <h3 class="skill-category-title">Tools</h3>
+          <div class="skill-items">
+            <div class="skill-item glass-card" data-level="70">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 22v-4a4.8 4.8 0 00-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 004 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Git</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:70%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="70">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 22v-4a4.8 4.8 0 00-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 004 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">GitHub</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:70%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="80">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">VS Code</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Skills -->
+        <div class="skill-category fade-up" style="transition-delay:0.4s">
+          <h3 class="skill-category-title">Other Skills</h3>
+          <div class="skill-items">
+            <div class="skill-item glass-card" data-level="80">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Problem Solving</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="75">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4M12 16h.01"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Debugging</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:75%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="65">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">API Integration</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:65%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="80">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Python Automation</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="55">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">AI Fundamentals</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:55%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cybersecurity -->
+        <div class="skill-category fade-up" style="transition-delay:0.5s">
+          <h3 class="skill-category-title">Cybersecurity</h3>
+          <div class="skill-items">
+            <div class="skill-item glass-card" data-level="40">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Network Security <span class="skill-badge">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:40%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="35">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Cryptography <span class="skill-badge">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:35%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="30">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Ethical Hacking <span class="skill-badge">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:30%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="25">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Wireshark / Nmap <span class="skill-badge">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:25%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud & DevOps -->
+        <div class="skill-category fade-up" style="transition-delay:0.6s">
+          <h3 class="skill-category-title">Cloud & DevOps</h3>
+          <div class="skill-items">
+            <div class="skill-item glass-card" data-level="35">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Docker <span class="skill-badge">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:35%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="50">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Linux / Bash</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:50%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data & ML -->
+        <div class="skill-category fade-up" style="transition-delay:0.7s">
+          <h3 class="skill-category-title">Data & ML</h3>
+          <div class="skill-items">
+            <div class="skill-item glass-card" data-level="30">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-6"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Pandas <span class="skill-badge">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:30%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item glass-card" data-level="25">
+              <div class="skill-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">NumPy <span class="skill-badge">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill:25%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Services</span>
+        <h2 class="section-title">What I <span class="text-accent">offer</span></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card glass-card fade-up">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+          </div>
+          <h3 class="service-title">Python Automation</h3>
+          <p class="service-desc">Automating repetitive tasks, building scripts, and creating efficient workflows using Python to save time and boost productivity.</p>
+        </div>
+        <div class="service-card glass-card fade-up" style="transition-delay:0.1s">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3 class="service-title">AI Development</h3>
+          <p class="service-desc">Exploring and implementing AI solutions including machine learning models, data analysis, and intelligent systems for real-world applications.</p>
+        </div>
+        <div class="service-card glass-card fade-up" style="transition-delay:0.2s">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3 class="service-title">API Integration</h3>
+          <p class="service-desc">Connecting applications with external services, building RESTful APIs, and creating seamless data flow between systems.</p>
+        </div>
+        <div class="service-card glass-card fade-up" style="transition-delay:0.3s">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3 class="service-title">Custom Software</h3>
+          <p class="service-desc">Developing tailored software solutions that solve specific problems, from desktop applications to full-stack web platforms.</p>
+        </div>
+        <div class="service-card glass-card fade-up" style="transition-delay:0.4s">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-desc">Building clean, responsive websites and web applications with modern HTML, CSS, and JavaScript focusing on performance and user experience.</p>
+        </div>
+        <div class="service-card glass-card fade-up" style="transition-delay:0.5s">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="service-title">Cybersecurity</h3>
+          <p class="service-desc">Understanding security principles, vulnerability assessment, cryptography basics, and ethical hacking practices to build and maintain secure applications.</p>
+        </div>
+        <div class="service-card glass-card fade-up" style="transition-delay:0.6s">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+          </div>
+          <h3 class="service-title">Cloud Solutions</h3>
+          <p class="service-desc">Deploying and managing applications on cloud platforms, setting up CI/CD pipelines, containerization with Docker, and Linux server administration for reliable infrastructure.</p>
+        </div>
+        <div class="service-card glass-card fade-up" style="transition-delay:0.7s">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-6"/></svg>
+          </div>
+          <h3 class="service-title">Data Analysis</h3>
+          <p class="service-desc">Cleaning, processing, and visualizing data using Python libraries like Pandas and NumPy to uncover patterns and deliver actionable insights.</p>
+        </div>
+        <div class="service-card glass-card fade-up" style="transition-delay:0.8s">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <h3 class="service-title">Technical Writing</h3>
+          <p class="service-desc">Creating clear documentation, API references, tutorials, and technical blog posts that make complex concepts accessible and easy to understand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Projects</span>
+        <h2 class="section-title">My recent <span class="text-accent">work</span></h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card glass-card fade-up">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">Calculator App</span>
+              </div>
+              <div class="mockup-body calculator-mock">
+                <div class="calc-display">125 + 87</div>
+                <div class="calc-grid">
+                  <span>7</span><span>8</span><span>9</span><span>/</span>
+                  <span>4</span><span>5</span><span>6</span><span>*</span>
+                  <span>1</span><span>2</span><span>3</span><span>-</span>
+                  <span>0</span><span>.</span><span>=</span><span>+</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Scientific Calculator</h3>
+            <p class="project-desc">A functional calculator application with a clean interface supporting basic arithmetic operations and keyboard input.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Tkinter</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://shahidzilan.github.io/scientific-calculator/" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-up" style="transition-delay:0.1s">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">Rock Paper Scissors</span>
+              </div>
+              <div class="mockup-body rps-mock">
+                <div class="rps-hands">
+                  <div class="rps-hand">✊</div>
+                  <span class="rps-vs">vs</span>
+                  <div class="rps-hand">✋</div>
+                </div>
+                <div class="rps-result">You Win!</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Rock Paper Scissors Game</h3>
+            <p class="project-desc">An interactive Rock Paper Scissors game with score tracking, animated hand selections, and replay functionality.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Random</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://shahidzilan.github.io/rock-paper-scissors-game/" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-up" style="transition-delay:0.2s">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">Password Generator</span>
+              </div>
+              <div class="mockup-body pw-mock">
+                <div class="pw-display">xK9#mP2$vL</div>
+                <div class="pw-bar"></div>
+                <div class="pw-options">
+                  <span class="pw-opt active">Uppercase</span>
+                  <span class="pw-opt active">Symbols</span>
+                  <span class="pw-opt">Numbers</span>
+                </div>
+                <button class="pw-btn">Generate</button>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">SecurePass Password Generator</h3>
+            <p class="project-desc">A secure password generator with customizable length, character types, and strength indicator for creating strong passwords.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Random</span>
+              <span class="tech-tag">String</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://shahidzilan.github.io/securepass-password-generator/" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-up">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">To-Do List</span>
+              </div>
+              <div class="mockup-body todo-mock">
+                <div class="todo-input-mock">Add a new task...</div>
+                <div class="todo-item-mock done"><span class="todo-check">✓</span> Learn Python basics</div>
+                <div class="todo-item-mock done"><span class="todo-check">✓</span> Build calculator app</div>
+                <div class="todo-item-mock"><span class="todo-empty"></span> Practice algorithms</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">To-Do List Application</h3>
+            <p class="project-desc">A task management application with add, edit, delete, and mark complete functionality. Clean UI with local data persistence.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Tkinter</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="#" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-up" style="transition-delay:0.1s">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">Weather App</span>
+              </div>
+              <div class="mockup-body weather-mock">
+                <div class="weather-city">Dhaka, BD</div>
+                <div class="weather-temp">32°C</div>
+                <div class="weather-icon">⛅</div>
+                <div class="weather-desc">Partly Cloudy</div>
+                <div class="weather-details">
+                  <span>💧 65%</span>
+                  <span>🌬️ 12 km/h</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Weather Application</h3>
+            <p class="project-desc">A real-time weather application using API data to display current conditions, forecasts, and location-based weather information.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">API</span>
+              <span class="tech-tag">JSON</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="#" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-up" style="transition-delay:0.2s">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">Portfolio Website</span>
+              </div>
+              <div class="mockup-body portfolio-mock">
+                <div class="portfolio-mock-nav"><span></span><span></span><span></span></div>
+                <div class="portfolio-mock-hero">
+                  <div class="portfolio-mock-text"></div>
+                  <div class="portfolio-mock-text short"></div>
+                </div>
+                <div class="portfolio-mock-cards">
+                  <div></div><div></div><div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Personal Portfolio Website</h3>
+            <p class="project-desc">A premium, responsive portfolio website with Liquid Glass UI, smooth animations, and modern design principles.</p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="#" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-up" style="transition-delay:0.3s">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">Port Scanner</span>
+              </div>
+              <div class="mockup-body scanner-mock">
+                <div class="scanner-status">Scanning 192.168.1.0/24...</div>
+                <div class="scanner-progress">
+                  <div class="scanner-bar" style="width:65%"></div>
+                </div>
+                <div class="scanner-results">
+                  <span class="scanner-open">22/tcp open — SSH</span>
+                  <span class="scanner-open">80/tcp open — HTTP</span>
+                  <span class="scanner-closed">443/tcp filtered</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Port Scanner</h3>
+            <p class="project-desc">A multi-threaded port scanner that identifies open ports and running services on target hosts. Built with Python sockets for efficient network reconnaissance.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Socket</span>
+              <span class="tech-tag">Threading</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="#" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-up" style="transition-delay:0.4s">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">Caesar Cipher</span>
+              </div>
+              <div class="mockup-body cipher-mock">
+                <div class="cipher-display">HELLO → KHOOR</div>
+                <div class="cipher-key">Shift: 3</div>
+                <div class="cipher-options">
+                  <span class="cipher-opt active">Encrypt</span>
+                  <span class="cipher-opt">Decrypt</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Caesar Cipher Tool</h3>
+            <p class="project-desc">A command-line encryption and decryption tool implementing the Caesar cipher. Supports custom shift values, brute-force decryption, and file input.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Cryptography</span>
+              <span class="tech-tag">CLI</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="#" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-up" style="transition-delay:0.5s">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">Password Analyzer</span>
+              </div>
+              <div class="mockup-body pw-analyzer-mock">
+                <div class="pw-input-mock">MyP@ss123</div>
+                <div class="pw-strength-bar strong"></div>
+                <div class="pw-metrics">
+                  <span>Length: 9/12</span>
+                  <span>Entropy: 52 bits</span>
+                  <span>Crack time: ~3 hours</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Password Strength Analyzer</h3>
+            <p class="project-desc">A password analysis tool that evaluates strength, checks against common patterns, calculates entropy, and estimates crack time for security awareness.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Regex</span>
+              <span class="tech-tag">Entropy</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="#" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-up" style="transition-delay:0.6s">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">Task Manager API</span>
+              </div>
+              <div class="mockup-body api-mock">
+                <div class="api-endpoint"><span class="api-method">GET</span> /tasks</div>
+                <div class="api-response">
+                  <div class="api-line">{</div>
+                  <div class="api-line api-indent">"id": 1,</div>
+                  <div class="api-line api-indent">"title": "Learn FastAPI",</div>
+                  <div class="api-line api-indent">"status": "completed"</div>
+                  <div class="api-line">},</div>
+                  <div class="api-line">{</div>
+                  <div class="api-line api-indent">"id": 2,</div>
+                  <div class="api-line api-indent">"title": "Build portfolio",</div>
+                  <div class="api-line api-indent">"status": "pending"</div>
+                  <div class="api-line">}</div>
+                  <div class="api-line api-status">200 OK</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">REST API — Task Manager</h3>
+            <p class="project-desc">A full-featured RESTful API for task management built with FastAPI and MongoDB. Supports CRUD operations, user authentication, filtering, and pagination.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">JWT</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="#" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-up" style="transition-delay:0.7s">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">Web Scraper</span>
+              </div>
+              <div class="mockup-body scraper-mock">
+                <div class="scraper-url">Scraping https://example.com...</div>
+                <div class="scraper-line"><span class="scraper-check">✓</span> Title: Example Domain</div>
+                <div class="scraper-line"><span class="scraper-check">✓</span> Links: 3 found</div>
+                <div class="scraper-line"><span class="scraper-check">✓</span> Images: 2 found</div>
+                <div class="scraper-line"><span class="scraper-check">✓</span> Data saved to output.json</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Web Scraper</h3>
+            <p class="project-desc">A Python web scraper that extracts structured data from websites using BeautifulSoup and Requests. Supports recursive crawling, CSV/JSON export, and rate limiting.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">BeautifulSoup</span>
+              <span class="tech-tag">Requests</span>
+              <span class="tech-tag">JSON</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="#" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-up" style="transition-delay:0.8s">
+          <div class="project-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-header">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-title">Hangman Game</span>
+              </div>
+              <div class="mockup-body hangman-mock">
+                <div class="hangman-art">
+                  <pre>  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========</pre>
+                </div>
+                <div class="hangman-word">_ _ _ _ _ _</div>
+                <div class="hangman-hint">Hint: Programming language</div>
+                <div class="hangman-guesses">
+                  <span>Used: A, E, S, T, B, C</span>
+                  <span class="hangman-lives">Lives: 4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Hangman Game</h3>
+            <p class="project-desc">A classic word-guessing game built in Python with a rich CLI interface. Features multiple difficulty levels, categorized word banks, and score tracking.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">OOP</span>
+              <span class="tech-tag">CLI</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="#" class="project-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="section education" id="education">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Education</span>
+        <h2 class="section-title">My <span class="text-accent">journey</span></h2>
+      </div>
+      <div class="timeline fade-up">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-year">2026 — 2030</div>
+            <h3 class="timeline-title">B.Sc. Computer Science & Engineering</h3>
+            <p class="timeline-place">Bangladesh University</p>
+            <p class="timeline-desc">Pursuing a comprehensive degree in Computer Science covering algorithms, data structures, AI, software engineering, and modern computing technologies.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-year">2025</div>
+            <h3 class="timeline-title">HSC (Higher Secondary Certificate)</h3>
+            <p class="timeline-place">Govt. Mohammadpur Model School and College</p>
+            <p class="timeline-desc">Completed higher secondary education with a focus on Science, building the academic foundation for my Computer Science journey.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-year">2023</div>
+            <h3 class="timeline-title">SSC (Secondary School Certificate)</h3>
+            <p class="timeline-place">Milestone College</p>
+            <p class="timeline-desc">Completed secondary education in Science, where I first discovered my passion for technology and problem-solving.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Let's <span class="text-accent">connect</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info fade-up">
+          <p class="contact-desc">I'm always open to discussing new opportunities, collaborations, or just having a conversation about technology. Feel free to reach out!</p>
+          <div class="contact-links">
+            <a href="mailto:shahidzilan7@gmail.com" class="contact-link glass-card">
+              <div class="contact-link-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <span class="contact-link-label">Email</span>
+                <span class="contact-link-value">shahidzilan7@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="contact-link glass-card">
+              <div class="contact-link-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <div>
+                <span class="contact-link-label">GitHub</span>
+                <span class="contact-link-value">github.com/shahidzilan</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/shahidzilan" target="_blank" rel="noopener" class="contact-link glass-card">
+              <div class="contact-link-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <div>
+                <span class="contact-link-label">LinkedIn</span>
+                <span class="contact-link-value">linkedin.com/in/shahidzilan</span>
+              </div>
+            </a>
+            <a href="https://instagram.com/shahidzilan" target="_blank" rel="noopener" class="contact-link glass-card">
+              <div class="contact-link-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </div>
+              <div>
+                <span class="contact-link-label">Instagram</span>
+                <span class="contact-link-value">instagram.com/shahidzilan</span>
+              </div>
+            </a>
+            <div class="contact-link glass-card">
+              <div class="contact-link-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span class="contact-link-label">Location</span>
+                <span class="contact-link-value">Bangladesh</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrapper fade-up" style="transition-delay:0.2s">
+          <form class="contact-form glass-card" id="contactForm" action="https://formspree.io/f/mpqvdkrn" method="POST">
+            <input type="hidden" name="_subject" value="Portfolio Contact">
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+              <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="_replyto" class="form-input" placeholder="your@email.com" required>
+              <span class="form-error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="What's this about?" required>
+              <span class="form-error" id="subjectError"></span>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-input form-textarea" placeholder="Your message..." rows="5" required></textarea>
+              <span class="form-error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full magnetic" id="submitBtn">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <p>Message sent successfully!</p>
+              <span>Thank you for reaching out. I'll get back to you soon.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <a href="#hero" class="footer-logo magnetic">
+            <img src="photo.jpeg" alt="Shahid Zilan" class="footer-logo-image">
+          </a>
+          <p class="footer-text">&copy; 2026 Shahid Zilan. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+          <div class="footer-socials">
+            <a href="https://github.com/shahidzilan" target="_blank" rel="noopener" class="footer-social magnetic" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/shahidzilan" target="_blank" rel="noopener" class="footer-social magnetic" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://instagram.com/shahidzilan" target="_blank" rel="noopener" class="footer-social magnetic" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="mailto:shahidzilan7@gmail.com" class="footer-social magnetic" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <button class="back-to-top magnetic" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
