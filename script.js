@@ -342,28 +342,6 @@
   });
 
   // ========================================
-  // THEME TOGGLE
-  // ========================================
-  const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('theme');
-
-  if (savedTheme === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-
-  themeToggle.addEventListener('click', () => {
-    const html = document.documentElement;
-    const isLight = html.getAttribute('data-theme') === 'light';
-    if (isLight) {
-      html.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      html.setAttribute('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
-    }
-  });
-
-  // ========================================
   // BACK TO TOP
   // ========================================
   const backToTop = document.getElementById('backToTop');
