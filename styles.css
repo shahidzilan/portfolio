@@ -219,28 +219,6 @@ input, textarea { font-family: inherit; }
   justify-content: space-between;
 }
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.nav-logo-text {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: -0.5px;
-  color: var(--text-primary);
-}
-
-.nav-logo-image {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid var(--glass-border);
-}
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -646,20 +624,20 @@ input, textarea { font-family: inherit; }
 .hero-image-wrapper::before {
   content: '';
   position: absolute;
-  inset: -4px;
+  inset: -3px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.2);
   box-shadow:
-    0 0 40px rgba(255,255,255,0.04),
-    inset 0 0 40px rgba(255,255,255,0.02);
+    0 0 30px rgba(255,255,255,0.06),
+    inset 0 0 30px rgba(255,255,255,0.03);
   z-index: 0;
   pointer-events: none;
   animation: ringPulse 4s ease-in-out infinite;
 }
 
 @keyframes ringPulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.02); }
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.02); }
 }
 
 .hero-image-float {
@@ -1828,21 +1806,6 @@ input, textarea { font-family: inherit; }
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
-}
-
-.footer-logo span {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--text-primary);
-}
-
-.footer-logo-image {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid var(--glass-border);
 }
 
 .footer-text {

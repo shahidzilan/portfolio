@@ -33,10 +33,10 @@
   });
 
   function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.2;
-    cursorY += (mouseY - cursorY) * 0.2;
-    followerX += (mouseX - followerX) * 0.08;
-    followerY += (mouseY - followerY) * 0.08;
+    cursorX += (mouseX - cursorX) * 0.4;
+    cursorY += (mouseY - cursorY) * 0.4;
+    followerX += (mouseX - followerX) * 0.18;
+    followerY += (mouseY - followerY) * 0.18;
 
     cursor.style.left = cursorX - 4 + 'px';
     cursor.style.top = cursorY - 4 + 'px';
