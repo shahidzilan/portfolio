@@ -91,7 +91,7 @@
     if (mobileMenu.classList.contains('active')) {
       document.body.style.overflow = 'hidden';
     } else {
-      document.body.classList.add('loaded');
+      document.body.style.overflow = '';
     }
   });
 
