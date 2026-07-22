@@ -5,56 +5,8 @@
 (function () {
   'use strict';
 
-  // ========================================
-  // LOADER
-  // ========================================
-  const loader = document.getElementById('loader');
-
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loader.classList.add('hidden');
-      document.body.classList.add('loaded');
-      initFadeUp();
-    }, 800);
-  });
-
-  // ========================================
-  // CUSTOM CURSOR
-  // ========================================
-  const cursor = document.getElementById('cursor');
-  const follower = document.getElementById('cursorFollower');
-  let mouseX = 0, mouseY = 0;
-  let cursorX = 0, cursorY = 0;
-  let followerX = 0, followerY = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.4;
-    cursorY += (mouseY - cursorY) * 0.4;
-    followerX += (mouseX - followerX) * 0.18;
-    followerY += (mouseY - followerY) * 0.18;
-
-    cursor.style.left = cursorX - 4 + 'px';
-    cursor.style.top = cursorY - 4 + 'px';
-    follower.style.left = followerX - 18 + 'px';
-    follower.style.top = followerY - 18 + 'px';
-
-    requestAnimationFrame(animateCursor);
-  }
-
-  if (window.matchMedia('(hover: hover)').matches) {
-    animateCursor();
-
-    const hoverTargets = document.querySelectorAll('a, button, .glass-card, .social-link, .project-btn, .contact-link, .magnetic');
-    hoverTargets.forEach((el) => {
-      el.addEventListener('mouseenter', () => follower.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => follower.classList.remove('hovering'));
-    });
-  }
+  document.body.classList.add('loaded');
+  initFadeUp();
 
   // ========================================
   // SCROLL PROGRESS
