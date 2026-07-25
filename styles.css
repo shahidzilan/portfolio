@@ -477,6 +477,8 @@ input, textarea { font-family: inherit; }
   border-radius: 50%;
   overflow: hidden;
   border: 1.5px solid rgba(255,255,255,0.15);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }
 
 .hero-image {
@@ -484,6 +486,8 @@ input, textarea { font-family: inherit; }
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }
 
 .hero-scroll-indicator {
