@@ -327,4 +327,32 @@
   animateStats();
   animateSkillBars();
 
+  // ========================================
+  // CUSTOM CURSOR
+  // ========================================
+  const dot = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  let mouseX = 0, mouseY = 0;
+  let ringX = 0, ringY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.transform = `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`;
+  });
+
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.35;
+    ringY += (mouseY - ringY) * 0.35;
+    ring.style.transform = `translate3d(${ringX - 16}px, ${ringY - 16}px, 0)`;
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  // Hover effect on interactive elements
+  document.querySelectorAll('a, button, .magnetic, .project-card, .service-card, .skill-item').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+  });
+
 })();
