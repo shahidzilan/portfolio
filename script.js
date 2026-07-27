@@ -355,30 +355,4 @@
     el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
   });
 
-  // ========================================
-  // PARALLAX TILT — HERO IMAGE
-  // ========================================
-  const heroWrapper = document.querySelector('.hero-image-wrapper');
-  const heroFrame = document.querySelector('.hero-image-frame');
-  const heroImg = document.querySelector('.hero-image');
-
-  if (heroWrapper && heroFrame && heroImg) {
-    heroWrapper.addEventListener('mousemove', (e) => {
-      const rect = heroWrapper.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      const deltaX = (e.clientX - centerX) / (rect.width / 2);
-      const deltaY = (e.clientY - centerY) / (rect.height / 2);
-      const tiltX = deltaY * -8;
-      const tiltY = deltaX * 8;
-      heroFrame.style.transform = `perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-      heroImg.style.transform = `translate(${deltaX * 6}px, ${deltaY * 6}px) scale(1.08)`;
-    });
-
-    heroWrapper.addEventListener('mouseleave', () => {
-      heroFrame.style.transform = 'perspective(600px) rotateX(0deg) rotateY(0deg)';
-      heroImg.style.transform = 'translate(0, 0) scale(1)';
-    });
-  }
-
 })();

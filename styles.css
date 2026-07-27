@@ -477,8 +477,14 @@ input, textarea { font-family: inherit; }
   border-radius: 50%;
   overflow: hidden;
   border: 1.5px solid rgba(255,255,255,0.15);
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
+  z-index: 1;
+}
+
+.hero-image-wrapper:hover .hero-image-frame {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .hero-image {
